@@ -41,7 +41,7 @@ function Point(x = 0, y = 0) {
 }
 
 const p = new Point();
-p // { x: 0, y: 0 }
+console.log(p) // { x: 0, y: 0 }
 
 /*============================================================*/
 //   参数变量是默认声明的，所以不能用let或const再次声明
@@ -50,7 +50,7 @@ function foo(x = 5) {
     let x = 1; // error
     const x = 2; // error
 }
-
+foo()
 /*============================================================*/
 // 不报错
 function foo(x, x, y) {
@@ -71,7 +71,32 @@ function foo(p = x + 1) {
     console.log(p);
 }
 
-foo() // 100
+foo()
 
 x = 100;
-foo() // 101
+foo()
+
+
+
+global.a ='outter'
+var a = {
+    b: function() {
+        this.a = 'inn';
+        function func() {
+            console.log(this.a);
+        }
+        func();
+    },
+    c: 'hello'
+  }
+  a.b();
+
+  global.a ='outter'
+  function f(){
+      this.a = 'inn';
+      function func() {
+        console.log(this.a);
+      }
+      func();
+  }
+  f()

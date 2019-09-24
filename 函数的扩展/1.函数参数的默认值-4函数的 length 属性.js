@@ -1,10 +1,11 @@
 // 返回没有指定默认值的参数个数，指定了默认值后，length属性将失真
-(function (a) {}).length // 1
-(function (a = 5) {}).length // 0
-(function (a, b, c = 5) {}).length // 2
+
+(function (a) {}).length 
+(function (a = 5) {}).length 
+(function (a, b, c = 5) {}).length 
 
 
-// length属性的含义是，该函数预期传入的参数个数
+// length属性的含义是，该函数 预期 传入的参数个数
 // 某个参数指定默认值以后，预期传入的参数个数就不包括这个参数了
 // rest 参数也不会计入length属性
 

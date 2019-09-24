@@ -30,7 +30,7 @@ function tailFactorial(n, total) {
 
 const factorial = currying(tailFactorial, 1);
 
-factorial(5) // 120
+console.log(factorial(5)) // 120
 
 /*============================================================*/
 //  第二种方法就简单多了，就是采用 ES6 的函数默认值。

@@ -26,14 +26,13 @@ insert(2).into([1, 3]).after(1); //[1, 2, 3]
 
 
 
-const pipeline = (...funcs) =>
-  val => funcs.reduce((a, b) => b(a), val);
+const pipeline = (...funcs) => val => funcs.reduce((a, b) => b(a), val);
 
 const plus1 = a => a + 1;
 const mult2 = a => a * 2;
 const addThenMult = pipeline(plus1, mult2);
 
-addThenMult(5)
+console.log(addThenMult(5))
 
 /** reduce()方法
  *  接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。对空数组是不会执行回调函数的。

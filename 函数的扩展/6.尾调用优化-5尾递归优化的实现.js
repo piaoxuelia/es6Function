@@ -9,7 +9,7 @@ function sum(x, y) {
     }
 }
 
-// sum(1, 100000)
+sum(1, 100000)
 // Uncaught RangeError: Maximum call stack size exceeded(…)
 //   超出调用栈的最大次数。
 
@@ -38,7 +38,6 @@ function tco(f) {
     var value;
     var active = false;
     var accumulated = [];
-  
     return function accumulator() {
       accumulated.push(arguments);
       if (!active) {
@@ -61,6 +60,6 @@ function tco(f) {
     }
   });
   
-  sum(1, 100000)
+  console.log(sum(1, 100000))
 
 //   tco函数是尾递归优化的实现，它的奥妙就在于状态变量active。默认情况下，这个变量是不激活的。一旦进入尾递归优化的过程，这个变量就激活了。然后，每一轮递归sum返回的都是undefined，所以就避免了递归执行；而accumulated数组存放每一轮sum执行的参数，总是有值的，这就保证了accumulator函数内部的while循环总是会执行。这样就很巧妙地将“递归”改成了“循环”，而后一轮的参数会取代前一轮的参数，保证了调用栈只有一层。
