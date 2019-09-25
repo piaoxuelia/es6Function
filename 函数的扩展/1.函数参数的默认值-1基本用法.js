@@ -75,28 +75,3 @@ foo()
 
 x = 100;
 foo()
-
-
-
-global.a ='outter'
-var a = {
-    b: function() {
-        this.a = 'inn';
-        function func() {
-            console.log(this.a);
-        }
-        func();
-    },
-    c: 'hello'
-  }
-  a.b();
-
-  global.a ='outter'
-  function f(){
-      this.a = 'inn';
-      function func() {
-        console.log(this.a);
-      }
-      func();
-  }
-  f()

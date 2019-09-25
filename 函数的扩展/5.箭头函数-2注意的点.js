@@ -104,9 +104,7 @@ foo(2, 4, 6, 8)
 // 由于箭头函数没有自己的this，所以当然也就不能用call()、apply()、bind()这些方法去改变this的指向。
 
 var f = (function() {
-    return [
-      (() => this.x).bind({ x: 'inner' })()
-    ];
+    return [(() => this.x).bind({ x: 'inner' })()];
   }).call({ x: 'outer' });
 console.log(f)
 
