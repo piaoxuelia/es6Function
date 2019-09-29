@@ -89,25 +89,28 @@ console.log(x);// 1
 // 例子1
 
 var y = 1;
- 
 function foo(x = y) {
   var x
   console.log(x); 
 }
- 
 foo();
 
 /*----------------------*/
 
 // 例子2
-
 function foo(x = 2, y=function(){x = 3}) {
   var x;
   y();
   console.log(x); 
 }
- 
 foo();
 foo(5);
 
 // 如果函数体内只是声明了和参数同名的变量，没有赋值，相当于在函数体内参数执行了赋值，var x; x = 参数值
+
+
+function foo(x) {
+  var x;
+  console.log(x); 
+}
+foo(5);

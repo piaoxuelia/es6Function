@@ -9,7 +9,7 @@ function sum(x, y) {
     }
 }
 
-sum(1, 100000)
+sum(1, 10000)
 // Uncaught RangeError: Maximum call stack size exceeded(…)
 //   超出调用栈的最大次数。
 
