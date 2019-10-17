@@ -174,7 +174,7 @@ let map = new Map([
     [2, 'two'],
     [3, 'three'],
   ]);
-  
+
 let arr = [...map.keys()]; // [1, 2, 3]
 
 // Generator 函数运行后，返回一个遍历器对象，因此也可以使用扩展运算符。

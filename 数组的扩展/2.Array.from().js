@@ -111,7 +111,7 @@ Array.from([1, , 2, , 3], (n) => n || 0)
 function typesOf () {
     return Array.from(arguments, value => typeof value)
   }
-  typesOf(null, [], NaN)
+  console.log(typesOf(null, [], NaN))
   // ['object', 'object', 'number']
 
 //   如果map函数里面用到了this关键字，还可以传入Array.from的第三个参数，用来绑定this。
