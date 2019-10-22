@@ -4,6 +4,24 @@
 
 let obj = { foo: 123 };
 Object.getOwnPropertyDescriptor(obj, 'foo')
+
+
+
+let P = {
+  name : 'xiaoming'
+}
+let s = {
+  age: '18',
+  getName(){
+    return super.name;
+  }
+}
+let o = Object.setPrototypeOf(s, P);
+console.log(Object.getOwnPropertyNames(o))
+console.log(Object.keys(o))
+for(var val in o){
+  console.log(val)
+}
 //  {
 //    value: 123,
 //    writable: true,
